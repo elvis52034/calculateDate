@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>計算天數</title>
+    </head>
+    <body>
+        <p>輸入日期計算是當年的第幾天</p>
+	輸入日期:
+	<input type="date" id="txt1" name="txt1" size="40">
+	<br><br>
+	<input type="button" id="Button1" name="Button1"   
+		value="點我一下，執行計算" onclick="Button1_onclick()">
+	<br><br>
+	當年的第幾天:
+	<input type="text" id="txt2" name="txt2"  PlaceHolder="第幾天?" size="10">
+	<br><br>
+<script type="text/javascript">
+     
+    function Button1_onclick(){
+        
+        var d3= document.getElementById("txt1").value;
+        var d1=new Date(d3);
+        var d2=new Date(d3);
+        d2.setMonth(0);
+        d2.setDate(1);
+        var d4=d1.getTime();
+        var d5=d2.getTime();
+        var d6=(d4-d5)/86400000+1;
+        txt2.value=d6;
+    }
+</script>
+
+    </body>
+</html>
